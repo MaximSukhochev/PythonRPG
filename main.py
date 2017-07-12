@@ -1,12 +1,17 @@
 import os
 import random
+import sys
+
+platform = sys.platform
+
+clear = lambda:os.system('cls' if os.name == 'nt' else 'clear')
 
 name = input("Enter your name\n")
 print("Welcome,", name + ", it is time to start.")
 print("Beware! This game is hard. Once you are dead, you will be dead for good.")
 
-choice = None
-loop = None
+choice = 0
+loop = 0
 chance = 1
 enemySelected = 0
 
@@ -26,7 +31,7 @@ enemyCount = 0
 expForKill = 1
 
 while playerHP > 0:
-    os.system('cls')
+    clear()
 
     if enemyHP <= 0:
         enemyHP = enemyHP + 20
